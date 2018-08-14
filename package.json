@@ -1,0 +1,57 @@
+{
+  "name": "crudserver",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "proxy": "http://127.0.0.1:8080",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "classnames": "^2.2.6",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "express": "^4.16.3",
+    "helmet": "^1.3.0",
+    "immutability-helper": "^2.7.0",
+    "javascript-time-ago": "^1.0.30",
+    "jquery": "^3.3.1",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-mysql": "^5.2.0",
+    "moment": "^2.22.2",
+    "mysql": "^2.15.0",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.0",
+    "react-confirm-alert": "^2.0.5",
+    "react-contextmenu": "^2.9.3",
+    "react-data-grid": "^4.0.7",
+    "react-data-grid-addons": "^4.0.8",
+    "react-dnd": "^5.0.0",
+    "react-dnd-html5-backend": "^5.0.1",
+    "react-dom": "^16.4.2",
+    "react-responsive-modal": "^3.0.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "crudserver"
+}

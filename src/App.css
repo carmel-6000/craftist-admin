@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color:#ebebeb;
+  padding: 20px;
+  color: #2d2d2d;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+.App-title a:hover{text-decoration:none;}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.tools button.btn{margin-right:10px;}
+.chooseFieldsDropDown{float:left;}
+.chooseFieldsDropDown .dropdown-menu.show-dropdown{display:block !important;}
+.chooseFieldsDropDown .dropdown-menu input{width:20px;}
+.chooseFieldsDropDown ul{list-style:none;padding-left:5px;font-size:0.8em;}
+.chooseFieldsDropDown ul li{margin:0 !important;margin-top:3px;}
+.chooseFieldsDropDown ul li input[type=checkbox]{position:relative;top:3px;}
+
+.craftist-logo{position:absolute;left:50px;top:10px;width:150px;}
+header ul{list-style:none;}
+
+a:link {color: #f6947b;}
+a:visited {color: #f6947b;}
+a:hover {color: #f6947b !important;text-decoration:underline;}
+a:active {color: #f6947b;}
+
+.styles_modal__gNwvD{
+  max-width:none !important;
+  position:absolute;top:30px;
+}

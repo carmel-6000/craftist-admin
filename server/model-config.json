@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "msql"
+  },
+  "AccessToken": {
+    "dataSource": "msql",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "msql",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "msql",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "AmazonFeedRequests": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "EbayItems": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "IdsIndexes": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "Items": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "ItemsImages": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "ItemsMaterials": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "ItemsTags": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "ItemsVariations": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "PreviousItems": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "SoldItems": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "SyncRequests": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "UsersBackup": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "Clients": {
+    "dataSource": "msql",
+    "public": true
+  },
+  "ClientItems": {
+    "dataSource": "msql",
+    "public": true
+  }
+}

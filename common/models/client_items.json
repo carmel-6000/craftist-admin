@@ -1,0 +1,57 @@
+{
+  "name": "ClientItems",
+  "crud":{
+    "menubar":{
+      "menuitems":[
+        {
+          "label":"Show plain table",
+          "type":"popupAction",
+          "action":"showPlainTable"
+        }
+      ]
+    },
+    "options":{
+      "enableVirtualFields":true
+    },
+    "fields":{
+      "id":{},
+      "title":{
+        "width":"450"
+      },
+      "userName":{
+        "isHidden":"false"
+      },
+      "usdPrice":{
+        "width":"100"
+      },
+      "subCategory":{},
+      "category":{},
+      "ebayLink":{
+        "type":"externalLink",
+        "value":"Go →"
+      },
+      "amazonLink":{
+        "type":"externalLink",
+        "value":"Go →"
+      },
+      "craftistonlineLink":{
+        "type":"externalLink",
+        "value":"Go →"
+      },
+      "pinterestLink":{
+        "type":"externalLink",
+        "value":"Go →"
+      }
+    }
+  },
+  "options": {
+    "idInjection": false,
+    "mysql": {
+      "schema": "craftist",
+      "table": "ids_indexes"
+    },
+    "relations": {}
+  },
+  "properties": {}
+  
+}
