@@ -38,7 +38,7 @@ const booleansArgs = [{ id: 0, title:'No' ,text:'No',  value:0 }, { id: 1, title
 const BooleanEditor = <DropDownEditor options={booleansArgs} />;
 
 const privatePublicArgs = [
-  { id: 0, title:'None' ,text:'None',  value:'None' }, 
+  { id: 0, title:'None' ,text:'None',  value:'None' },
   { id: 1, title:'Private',text:'Private', value:'Private' },
   { id: 2, title:'Public',text:'Public', value:'Public' }
 ];
@@ -47,7 +47,7 @@ const privatePublicEditor = <DropDownEditor options={privatePublicArgs} />;
 
 
 class BooleanFormatter extends React.Component {
-    
+
   //static propTypes = {value: PropTypes.number};
 
   render() {
@@ -61,26 +61,26 @@ class BooleanFormatter extends React.Component {
 }
 
 class ExternalLinkFormatter extends React.Component {
-    
+
   static propTypes = {value: PropTypes.string};
 
   render() {
     //console.log("LinkFormatter this.props",this.props.dependentValues.href);
     let val=this.props.dependentValues.val;
     let href=this.props.value;
-  
+
     if (href=="" || href==undefined){
       return (<div className="formatter-boolean">-</div>);
     }else{
       console.log("HREF",href);
       return (<a href={href} target="_blank">{val}</a>)
     }
-    
+
   }
 
 }
 class LinkFormatter extends React.Component {
-    
+
   static propTypes = {value: PropTypes.string};
 
   render() {
@@ -102,12 +102,12 @@ class LinkFormatter extends React.Component {
 }
 
 class DateTimeFormatter extends React.Component {
-    
+
   static propTypes = {value: PropTypes.string};
 
   constructor(props){
     super(props);
-    
+
     let rawDate=this.props.value;
     let dateObj=new Date(rawDate);
     //TimeAgo.locale(en);
@@ -122,7 +122,7 @@ class DateTimeFormatter extends React.Component {
     const fDate=this.fDate;
 
     return (
-      
+
       <div className="formatter-datetime">
           {fDate}
       </div>);
@@ -173,7 +173,7 @@ class MyContextMenu extends React.Component {
     return (
       <ContextMenu id={id}>
         <MenuItem data={{ rowIdx, idx }} onClick={this.onRowDelete}>Delete Row</MenuItem>
-        
+
       </ContextMenu>
     );
   }
@@ -188,7 +188,7 @@ class ChooseFieldsDropDown extends React.Component{
 
     this.state={isOpened:false};
     this.toggleDropDown=this.toggleDropDown.bind(this);
-    
+
 
   }
 
@@ -217,7 +217,7 @@ class ChooseFieldsDropDown extends React.Component{
     }else{
       this.props.removeCol(colName)
     }
-  
+
   }
 
   render(){
@@ -230,10 +230,10 @@ class ChooseFieldsDropDown extends React.Component{
     });
     return (
         <div className="dropdown chooseFieldsDropDown">
-          
-          <button 
-            className="btn btn-secondary dropdown-toggle" type="button" 
-            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" 
+
+          <button
+            className="btn btn-secondary dropdown-toggle" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded={this.state.isOpened ? 'true' : 'false'}
             onClick={this.toggleDropDown}
 
@@ -244,8 +244,8 @@ class ChooseFieldsDropDown extends React.Component{
           <div className={classes} aria-labelledby="dropdownMenuButton">
 <ul>
 {
-  this.props.allCols.map((col,i) => 
-    <li key={i}><input type='checkbox' 
+  this.props.allCols.map((col,i) =>
+    <li key={i}><input type='checkbox'
         defaultChecked={true}
         onClick={this.toggleCheckbox}
         name={col.key}
@@ -253,7 +253,7 @@ class ChooseFieldsDropDown extends React.Component{
     /><label>{col.name}</label></li>)
 }
 </ul>
-            
+
           </div>
         </div>
       );
@@ -264,7 +264,7 @@ class ChooseFieldsDropDown extends React.Component{
 
 
 class CustomToolbar extends React.Component {
-  
+
   static propTypes = {
     onAddRow: PropTypes.func,
     onToggleFilter: PropTypes.func,
@@ -285,33 +285,33 @@ class CustomToolbar extends React.Component {
     if (this.props.onAddRow !== null && this.props.onAddRow instanceof Function) {
       this.props.onAddRow({newRowIndex: this.props.numberOfRows});
     }
-   }; 
+   };
 
 
   renderAddRowButton = () => {
-    //if (this.props.onAddRow ) { 
+    //if (this.props.onAddRow ) {
       return (<button type="button" className="btn" onClick={this.onAddRow}>
         Add Row
       </button>);
-    //} 
-  };  
-   
-  
-  
+    //}
+  };
+
+
+
 
   renderCustomButtons=()=>{
 
     console.log("custom buttons",this.props.customButtons);
     const cButtons=this.props.customButtons;
-    
+
     return (
     <div>
       {
-        cButtons.map((cButton,i) => <button type="button" 
-          onClick={()=>this.props.handleCustomButtonClick('openRawTable')} 
+        cButtons.map((cButton,i) => <button type="button"
+          onClick={()=>this.props.handleCustomButtonClick('openRawTable')}
           className="btn" key={i}>{cButton.label}</button>)
       }
-    </div>  
+    </div>
     )
 
 
@@ -323,8 +323,8 @@ class CustomToolbar extends React.Component {
       return (<button type="button" className="btn" onClick={this.props.onToggleFilter}>
       {this.props.filterRowsButtonText}
     </button>);
-    } 
-  };  
+    }
+  };
 
   logOut = () => {
 
@@ -342,12 +342,12 @@ class CustomToolbar extends React.Component {
     return (
 
   <React.Fragment>
-    
+
 
     <div className="react-grid-Toolbar">
-    
+
     <div className="tools">
-        
+
         {this.renderCustomButtons()}
         {this.renderAddRowButton()}
         {this.renderToggleFilterButton()}
@@ -356,12 +356,12 @@ class CustomToolbar extends React.Component {
 
       </div>
 
-    <GroupedColumnsPanel groupBy={this.props.groupBy} 
-        onColumnGroupAdded={this.props.onColumnGroupAdded} 
+    <GroupedColumnsPanel groupBy={this.props.groupBy}
+        onColumnGroupAdded={this.props.onColumnGroupAdded}
         onColumnGroupDeleted={this.props.onColumnGroupDeleted}
 
         />
-    
+
     </div>
   </React.Fragment>
       );
@@ -384,7 +384,7 @@ class Grid extends Component {
       isModalPopupOpened:false
     };
     this.customButtons=[];
-    
+
 
 
     console.log("GRID PROPS",this.props);
@@ -400,7 +400,7 @@ class Grid extends Component {
 
 
   componentDidMount(){
-    
+
     let cols=[];
     let allCols=[];
 
@@ -416,30 +416,30 @@ class Grid extends Component {
         //console.log("validFields",validFields);
         console.log("~~~~~RES",res);
         let col={};
-        
-        
 
 
-        
+
+
+
         for (let prop in res.crud.fields){
-            
+
             //if (validFields.indexOf(prop)!==-1){
                 let key=null,name=null;
 
 
-                
+
                 if (this.props.useShortFieldsSyntax==true){
-                  
+
                   key = prop;
                   name=this.ucWords(new String(prop).replace(/([A-Z])/g, " $1"));
 
                 }  else{
 
-                  key=new String(prop).replace(/([A-Z])/g, "_$1").toLowerCase();  
+                  key=new String(prop).replace(/([A-Z])/g, "_$1").toLowerCase();
                   name=this.ucWords(key.replace(/_/g," "));
                 }
-                
-                
+
+
                 col={
                   key:key,
                   name:name,
@@ -457,15 +457,15 @@ class Grid extends Component {
                   col.width=80;
                   col.resizable=false;
                 }
-                
+
                 if (res.crud.fields[prop] && res.crud.fields[prop].type && res.crud.fields[prop].type =="boolean"){
                   console.log("prop (%s) is a boolean",prop);
                   if (res.crud.fields[prop].width && !isNaN(res.crud.fields[prop].width)){
                     col.width=res.crud.fields[prop].width;
                   }else{
-                    col.width=80;  
+                    col.width=80;
                   }
-                  
+
                   col.formatter=BooleanFormatter;
                   col.editor=BooleanEditor;
                   col.resizable=false;
@@ -494,23 +494,23 @@ class Grid extends Component {
                 if (res.crud.fields[prop] && res.crud.fields[prop].width && !isNaN(res.crud.fields[prop].width)){
                   col.width=parseInt(res.crud.fields[prop].width);
                 }
-                
+
 
                 if (res.crud.fields[prop] && res.crud.fields[prop].isHidden && res.crud.fields[prop].isHidden =="true" ){
 
                 }else{
-                  cols.push(col);    
+                  cols.push(col);
                 }
 
                 allCols.push(col);
-                
+
             //}
         }
 
 
         let apiUrl=this.props.modelApi;
-        
-        if (this.props.whereObj){          
+
+        if (this.props.whereObj){
           //console.log("where object~~~",this.props.whereObj);
           apiUrl=this.props.modelApi+"?where="+JSON.stringify(this.props.whereObj);
         }
@@ -528,15 +528,15 @@ class Grid extends Component {
             if (metaRes.crud && metaRes.crud.menubar && metaRes.crud.menubar.menuitems && typeof Array.isArray(metaRes.crud.menubar.menuitems) && metaRes.crud.menubar.menuitems.length>0){
               console.log("~~~~menubar exist with menuitems longer than 0",metaRes.crud.menubar.menuitems);
               for (let miIndex in metaRes.crud.menubar.menuitems){
-                
+
                 let menuItem=metaRes.crud.menubar.menuitems[miIndex];
-                
+
                 if (menuItem.type){
                   switch(menuItem.type){
                     case "popupAction":
                       //console.log("~~~~~~~~~~~~~~~~~~It's a popupAction menu item type");
                       this.customButtons.push(menuItem);
-                      
+
                       //console.log("rows",res);
                       //console.log("cols",cols);
                       let tac={textAlign:'center'};
@@ -551,14 +551,14 @@ class Grid extends Component {
                               {
 
                                 res.map((row,i)=><tr key={i}>
-                                { 
-                                  cols.map((col,ii)=>{ 
+                                {
+                                  cols.map((col,ii)=>{
                                     if (new String(row[col.key]).includes("http")){
-                                      return <td key={ii}  style={tac}><a href={row[col.key]}>Link</a></td>  
+                                      return <td key={ii}  style={tac}><a href={row[col.key]}>Link</a></td>
                                     }else{
-                                      return <td key={ii}  style={tac}>{row[col.key]}</td>  
+                                      return <td key={ii}  style={tac}>{row[col.key]}</td>
                                     }
-                                    
+
                                   })
 
                                 }</tr>)
@@ -568,12 +568,12 @@ class Grid extends Component {
 
                       )});
 
-                      
+
 
 
 
                     break;
-                  }  
+                  }
                 }
               }
             }else{
@@ -650,8 +650,9 @@ class Grid extends Component {
 
   rowGetter = (rowIdx) => {
     let rows = this.getRows();
-    //let rows=Selectors.getRows(this.state);
-    return rows[rowIdx];
+    let result =  rows[rowIdx];
+    result.c = rowIdx;
+    return result;
   };
 
   addNewRow = (index)=>{
@@ -660,13 +661,13 @@ class Grid extends Component {
     let newRow={...rows[rows.length-1]};
     for (let key in newRow){
         newRow[key]=null;
-    }  
-    
+    }
+
     rows.push(newRow);
     this.setState({rows:rows});
     setTimeout(()=>{
       let objDiv = document.querySelector(".react-grid-Canvas");
-      objDiv.scrollTop = objDiv.scrollHeight;  
+      objDiv.scrollTop = objDiv.scrollHeight;
     },500);
   }
 
@@ -676,7 +677,7 @@ class Grid extends Component {
       this.setState({isModalPopupOpened:true});
     }
   }
-  
+
   handleGridSort = (sortColumn, sortDirection) => {
     const comparer = (a, b) => {
       if (sortDirection === 'ASC') {
@@ -689,9 +690,9 @@ class Grid extends Component {
     this.setState({ rows:rows });
   };
 
-   
+
   handleFilterChange = (filter) => {
-    
+
     let newFilters = Object.assign({}, this.state.filters);
     if (filter.filterTerm) {
       newFilters[filter.column.key] = filter;
@@ -719,13 +720,13 @@ class Grid extends Component {
         onClick: () => {
 
           //console.log("row id",this.state.rows[rowIdx].id);
-          
+
           fetch(this.props.modelApi+'/'+this.state.rows[rowIdx].id, {
               method: 'DELETE',headers: {'Accept': 'application/json','Content-Type': 'application/json'}})
               .then(response=>{return response.json()}).then(res=> {
-            
+
             if (res.count && res.count==1){
-              
+
               this.state.rows.splice(rowIdx, 1);
               this.setState({rows: this.state.rows});
             }else{
@@ -744,12 +745,12 @@ class Grid extends Component {
     //customUI: ({ title, message, onClose }) => <div>Custom UI</div>,
     willUnmount: () => {}
   }
- 
+
   confirmAlert(options)
 
 
 
-    
+
   };
 
 
@@ -758,9 +759,9 @@ class Grid extends Component {
     //console.log("Grid has updated?");
     let rows = this.state.rows.slice();
 
-    
+
     for (let i = fromRow; i <= toRow; i++) {
-      
+
       let rowToUpdate = {...rows[i]};
       let updatedRow = update(rowToUpdate, {$merge: updated});
 
@@ -772,7 +773,7 @@ class Grid extends Component {
       let whereUrlEncoded='{"id":'+(updatedRow.id == null ? '"a"' : updatedRow.id) +'}';
       fetch(this.props.modelApi+'/upsertWithWhere?where='+whereUrlEncoded, {method: 'POST',headers: {'Accept': 'application/json','Content-Type': 'application/json'},body: JSON.stringify(uRow)}).then(response=>{return response.json()}).then(res=> {
         //console.log("Update res",res);
-        
+
         if (res.id && !isNaN(res.id) && updatedRow.id==null){
           updatedRow.id=res.id;
         }
@@ -802,7 +803,7 @@ class Grid extends Component {
     if (isNotInGroups) {
       columnGroups.push({key: activeColumn.key, name: activeColumn.name});
     }
-   
+
     this.setState({groupBy: columnGroups});
   };
 
@@ -823,7 +824,7 @@ class Grid extends Component {
 
 
   render() {
-    
+
     const ModalPopup=this.state.modalPopup;
 
     //console.log("cols?",this.cols);
@@ -843,14 +844,14 @@ class Grid extends Component {
               onAddFilter={this.handleFilterChange}
               onRowExpandToggle={this.onRowExpandToggle}
               contextMenu={<MyContextMenu id="customizedContextMenu" onRowDelete={this.deleteRow}/>}
-              toolbar={<CustomToolbar 
-                
+              toolbar={<CustomToolbar
+
                 handleCustomButtonClick={this.handleCustomButtonClick}
                 customButtons={this.customButtons}
                 groupBy={this.state.groupBy}
                 onColumnGroupAdded={this.onColumnGroupAdded}
                 onColumnGroupDeleted={this.onColumnGroupDeleted}
-                enableFilter={true} 
+                enableFilter={true}
                 onAddRow={this.addNewRow}
                 filterRowsButtonText="Filter"
                 addCol={this.addCol}

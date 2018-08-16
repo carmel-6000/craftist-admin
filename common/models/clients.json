@@ -3,6 +3,7 @@
 
   "crud":{
     "fields":{
+      "c":{},
       "id":{},
       "userName":{
           "type":"link",
