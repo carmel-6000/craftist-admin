@@ -1,6 +1,6 @@
 {
   "name": "Clients",
-  
+
   "crud":{
     "fields":{
       "id":{},
@@ -78,6 +78,11 @@
         "type":"boolean",
         "editable":"true",
         "width":"200"
+      },
+      "isPinned" : {
+        "type" : "boolean",
+        "editable" : "true",
+        "width" : "200"
       }
     }
 
@@ -91,7 +96,7 @@
     "relations": {}
   },
   "properties": {
-    
+
     "id": {
       "id":true,
       "type": "number",
@@ -693,7 +698,7 @@
         "dataScale": null,
         "nullable": "Y"
       }
-    },  
+    },
 
     "lastSyncedEbay": {
       "type": "Date",
@@ -709,7 +714,7 @@
         "dataScale": null,
         "nullable": "Y"
       }
-    },  
+    },
     "lastSyncedCraftist": {
       "type": "Date",
       "required": false,
@@ -724,7 +729,7 @@
         "dataScale": null,
         "nullable": "Y"
       }
-    },  
+    },
     "amazonUploadable": {
       "type": "Number",
       "required": false,
@@ -740,7 +745,7 @@
         "nullable": "Y"
       }
     },
-    
+
     "enablePinToBoard": {
       "type": "Number",
       "required": false,
@@ -749,6 +754,21 @@
       "scale": 0,
       "mysql": {
         "columnName": "enable_pin_to_board",
+        "dataType": "tinyint",
+        "dataLength": null,
+        "dataPrecision": 3,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "isPinned": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 3,
+      "scale": 0,
+      "mysql": {
+        "columnName": "is_pinned",
         "dataType": "tinyint",
         "dataLength": null,
         "dataPrecision": 3,
@@ -773,6 +793,6 @@
     }
 
 
-    
+
   }
 }
