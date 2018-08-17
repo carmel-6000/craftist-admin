@@ -1,3 +1,6 @@
+import React from "react";
+import { Redirect } from 'react-router';
+
 const Auth={
 
   _isAuthenticated:false,
@@ -38,8 +41,7 @@ const Auth={
 
     localStorage.removeItem('accessToken','');
     this._isAuthenticated=false;
-    return cb();
-    
+    return;
   }
 
 }

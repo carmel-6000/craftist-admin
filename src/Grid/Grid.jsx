@@ -826,8 +826,7 @@ class Grid extends Component {
   render() {
 
     const ModalPopup=this.state.modalPopup;
-
-    //console.log("cols?",this.cols);
+    
     return  (
       <React.Fragment>
         <DraggableContainer>
