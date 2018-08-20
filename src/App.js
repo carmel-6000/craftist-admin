@@ -8,7 +8,7 @@ import Login from './Auth/Login';
 import Auth  from './Auth/Auth';
 import ClientItemsList from './scenes/ClientItemsList/ClientItemsList';
 import logoImage from './img/craftist-logo.jpg';
-import  { Glyphicon , Navbar , Nav , NavItem , NavDropdown , MenuItem , NavbarHeader, NavbarBrand } from 'react-bootstrap/lib'
+import  { Glyphicon , Navbar , Nav , NavItem , NavDropdown , DropdownButton , MenuItem , NavbarHeader, NavbarBrand } from 'react-bootstrap/lib'
 
 const PrivateRoute = ({component:Component, ...rest})=>(
   <Route {...rest} render={(props)=>(
@@ -16,20 +16,26 @@ const PrivateRoute = ({component:Component, ...rest})=>(
     )}/>
   )
 
+const DropDownTitle=(props)=>{
+  return (<div>
+    <Glyphicon glyph="user" /> { " " + localStorage.getItem('email')}
+  </div>);
+}
+
 class  NavHeaderComponent extends Component {
     constructor(props) {
         super(props);
+
     }
 
     render () {
         return (
-            <Nav className="pull-right">
-                <NavItem eventKey={1} href="#">
-                    <Link to="/user" ><Glyphicon glyph="user" /> User </Link>
-                </NavItem>
-                <NavItem eventKey={2} onClick={this.props.logout}>
-                    <Glyphicon glyph="log-out" /> Logout
-                </NavItem>
+            <Nav className="pull-right dropdown-title" >
+                <DropdownButton noCaret bStyle="btn btn-lg"
+                eventKey={3} title={ <DropDownTitle/> } 
+            >
+                      <MenuItem eventKey='3' onClick={this.props.logout}><Glyphicon glyph="log-out" /> Logout</MenuItem>
+                </DropdownButton>
             </Nav>
         );
     }
@@ -39,7 +45,7 @@ class App extends Component {
 
     constructor(props){
         super(props)
-        this.state = { navHeader: Auth.isAuthenticated() === true ? true : false }
+        this.state = { navHeader: Auth.isAuthenticated() === true ? true : false,  }
     }
 
     updateNav = () => {
@@ -60,7 +66,7 @@ class App extends Component {
                     {navHeader}
                     <header className="App-header">
                       <Link to="/"><img src={logoImage} className='craftist-logo' /></Link>
-                      <h1 className="App-title"><Link to="/">Craftist Admin</Link></h1>
+                      <h1 className="App-title"><Link to="/" className="heading-style">Craftist Admin Panel</Link></h1>
                     </header>
 
                     <PrivateRoute exact

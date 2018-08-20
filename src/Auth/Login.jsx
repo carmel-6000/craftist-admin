@@ -29,6 +29,7 @@ class Login extends Component{
                 return;
             }
             if (isAuthenticated===true){
+                email = this.refs.email.value;
                 {this.props.navHeader()};
                 this.setState({redirTo:'home'});
             }
@@ -75,5 +76,4 @@ class Login extends Component{
     }    
 
 }
-
 export default Login;

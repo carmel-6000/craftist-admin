@@ -12,9 +12,17 @@
   padding: 20px;
   color: #2d2d2d;
 }
-
+.dropdown-title{
+  margin-top: 2.5%;
+}
+.dropdown-toggle {
+  background-color: #ededed;
+}
 .App-title {
   font-size: 3.5em;
+}
+.heading-style {
+  font-size: 80%;
 }
 .App-title a:hover{text-decoration:none;}
 

@@ -82,8 +82,7 @@
       },
       "isPinned" : {
         "type" : "boolean",
-        "editable" : "true",
-        "width" : "200"
+        "editable" : "true"
       }
     }
 

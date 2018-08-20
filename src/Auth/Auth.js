@@ -4,6 +4,7 @@ import { Redirect } from 'react-router';
 const Auth={
 
   _isAuthenticated:false,
+  _email : "",
   
   isAuthenticated(){
     
@@ -15,7 +16,7 @@ const Auth={
   },
 
   authenticate(email,pw,cb){
-
+    localStorage.setItem("email",email);
     fetch('/api/Users/login', {method: 'POST',headers: {'Accept': 'application/json','Content-Type': 'application/json'},
         body: JSON.stringify({email: email, password: pw})
     })
